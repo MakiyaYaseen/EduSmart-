@@ -78,3 +78,6 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log(`Server Started on port ${port}`);
 });
+
+// Export for Vercel Serverless
+export default app;
