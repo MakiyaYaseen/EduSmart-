@@ -1,1 +1,1 @@
-export const serverUrl = "https://edu-smart-7cbbklclt-makiyayaseens-projects.vercel.app";
+export const serverUrl = "https://edu-smart-alpha.vercel.app";
