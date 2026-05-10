@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from "firebase/auth"
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_APIKEY ,
-  authDomain: "login-lms-8b1c1.firebaseapp.com",
-  projectId: "login-lms-8b1c1",
-  storageBucket: "login-lms-8b1c1.firebasestorage.app",
-  messagingSenderId: "1015682287618",
-  appId: "1:1015682287618:web:be6c6c76e6f12e9a24bf1b"
+  apiKey: "AIzaSyDrUUy4CoEX1rrDrK12o02thVKLDwFLhdI",
+  authDomain: "my-lms-project-8a82f.firebaseapp.com",
+  projectId: "my-lms-project-8a82f",
+  storageBucket: "my-lms-project-8a82f.firebasestorage.app",
+  messagingSenderId: "863635277399",
+  appId: "1:863635277399:web:a08e9f9e8113fbfa3c4512"
 };
 
 // Initialize Firebase
