@@ -47,8 +47,15 @@ app.use(cors({
     credentials: true
 }));
 
-// Connect DB
-connectDB();
+// Connect DB Middleware
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Database Connection Error" });
+    }
+});
 
 // Routes
 app.use("/api/auth", authRouter);
