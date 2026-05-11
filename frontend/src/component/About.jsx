@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import about from '../assets/about.jpg'
-import video from "../assets/video.mp4"
+// import about from '../assets/about.jpg'
+// import video from "../assets/video.mp4"
+const about = "/about.jpg";
+const video = "/video.mp4";
 import { BsFillPatchCheckFill, BsArrowRight } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 import axios from 'axios'
