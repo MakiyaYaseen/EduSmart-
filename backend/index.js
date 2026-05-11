@@ -25,10 +25,11 @@ const port = process.env.PORT || 8000;
 
 // CORS should be first!
 app.use(cors({
-    origin: true, // This reflects the request origin (safest for cross-origin)
+    origin: 'https://edu-smart-qvdz.vercel.app',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"],
+    exposedHeaders: ["Set-Cookie"]
 }));
 
 // Disable helmet for now to ensure connection, we can add it back later with proper config
