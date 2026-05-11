@@ -23,8 +23,16 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-// Security Middleware
-app.use(helmet());
+// CORS should be first!
+app.use(cors({
+    origin: true, // This reflects the request origin (safest for cross-origin)
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"]
+}));
+
+// Disable helmet for now to ensure connection, we can add it back later with proper config
+// app.use(helmet());
 
 // Rate Limiting (15 mins mein 100 requests max)
 const limiter = rateLimit({
@@ -36,16 +44,8 @@ const limiter = rateLimit({
 });
 app.use("/api", limiter);
 
-// Middleware
 app.use(express.json());
-// app.use(mongoSanitize());
 app.use(cookieParser());
-app.use(cors({
-    origin: function (origin, callback) {
-        callback(null, true);
-    },
-    credentials: true
-}));
 
 // Connect DB Middleware
 app.use(async (req, res, next) => {
