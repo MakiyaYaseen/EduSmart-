@@ -23,6 +23,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
+// Debugging Logger
+app.use((req, res, next) => {
+    console.log(`Incoming Request: ${req.method} ${req.url} from ${req.headers.origin}`);
+    next();
+});
+
 // CORS should be first!
 app.use(cors({
     origin: 'https://edu-smart-qvdz.vercel.app',
