@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../assets/logo.jpg";
+// import logo from "../assets/logo.jpg";
+const logo = "/logo.jpg";
 import { IoPersonCircle, IoNotificationsOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

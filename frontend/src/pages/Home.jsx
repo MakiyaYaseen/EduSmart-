@@ -3,7 +3,8 @@ import Nav from '../component/Nav'
 import home from "../assets/home1.jpg"
 import { SiViaplay } from "react-icons/si";
 import { FaStar } from "react-icons/fa";
-import ai from "../assets/ai.png";
+// import ai from "../assets/ai.png";
+const ai = "/ai.png";
 import ai1 from "../assets/SearchAi.png";
 import Logos from '../component/Logos';
 import ExploreCourses from '../component/ExploreCourses';
