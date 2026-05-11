@@ -47,10 +47,12 @@ const ViewCourse = () => {
     userData?.enrolledCourses?.some(c =>
       String(c._id || c) === String(courseId))
 
-  const fetchCourseData = () => {
-    const course = courseData.find(course => course._id === courseId)
-    if (course) {
-      dispatch(setSelectedCourse(course))
+  const fetchCourseData = async () => {
+    try {
+      const res = await axios.get(`${serverUrl}/api/course/getcourse/${courseId}`, { withCredentials: true })
+      dispatch(setSelectedCourse(res.data))
+    } catch (error) {
+      console.log("Fetch course error:", error)
     }
   }
 
@@ -143,6 +145,7 @@ const ViewCourse = () => {
       toast.success("Review added successfully");
       setRating(0);
       setComment("");
+      fetchCourseData(); // Refresh data taake naya review show ho jaye
     } catch (error) {
       console.log(error);
       toast.error(error.response?.data?.message || "Failed to submit review");
