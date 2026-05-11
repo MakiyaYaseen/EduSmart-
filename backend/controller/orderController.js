@@ -12,6 +12,7 @@ export const createStripeOrder = async (req, res) => {
         const { courseId, title, price, thumbnail } = req.body;
         const userId = req.userId;
 
+        const clientUrl = process.env.CLIENT_URL || `https://${req.headers.host}`;
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
@@ -28,8 +29,8 @@ export const createStripeOrder = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `${process.env.CLIENT_URL}/payment-success?courseId=${courseId}&session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.CLIENT_URL}/view-course/${courseId}`,
+            success_url: `${clientUrl}/payment-success?courseId=${courseId}&session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${clientUrl}/viewcourse/${courseId}`,
             metadata: {
                 courseId: courseId,
                 userId: userId

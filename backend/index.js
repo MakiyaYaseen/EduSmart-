@@ -29,16 +29,30 @@ app.use((req, res, next) => {
     next();
 });
 
-// CORS should be first!
+// CORS Configuration
+const allowedOrigins = [
+    'https://edu-smart-qvdz.vercel.app',
+    'https://edu-smart-alpha.vercel.app',
+    'http://localhost:5173'
+];
+
 app.use(cors({
-    origin: 'https://edu-smart-qvdz.vercel.app',
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"],
     exposedHeaders: ["Set-Cookie"]
 }));
 
-// Disable helmet for now to ensure connection, we can add it back later with proper config
+// Disable helmet for now to ensure connection
 // app.use(helmet());
 
 // Rate Limiting (15 mins mein 100 requests max)
