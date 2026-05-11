@@ -169,7 +169,6 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                             VERIFICATION ID: {data.certificateId || "EDU-CERT-8821"}
                         </div>
                     </div>
-                    </div>
                 </div>
 
                 {/* Download Button */}
