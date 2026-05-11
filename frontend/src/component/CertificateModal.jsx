@@ -70,11 +70,12 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                             border: '30px solid #0f172a',
                             padding: '60px 40px',
                             fontFamily: 'serif',
+                            backgroundColor: '#ffffff', // Explicitly set background
                         }}
                     >
                         {/* Decorative Borders */}
-                        <div className="absolute border-[5px]" style={{ inset: '5px', borderColor: '#c5a059', pointerEvents: 'none' }}></div>
-                        <div className="absolute border" style={{ inset: '12px', borderColor: '#0f172a', pointerEvents: 'none' }}></div>
+                        <div className="absolute border-[5px]" style={{ inset: '5px', borderColor: '#c5a059', pointerEvents: 'none', borderStyle: 'solid' }}></div>
+                        <div className="absolute border" style={{ inset: '12px', borderColor: '#0f172a', pointerEvents: 'none', borderStyle: 'solid' }}></div>
 
                         {/* Header */}
                         <div>
@@ -91,13 +92,13 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                             <div className="italic font-extrabold text-[58px] leading-none" style={{ color: '#0f172a' }}>
                                 Certificate of Completion
                             </div>
-                            <p className="text-gray-500 uppercase mt-4 mb-0 text-xs tracking-[4px]">
+                            <p className="uppercase mt-4 mb-0 text-xs tracking-[4px]" style={{ color: '#6b7280' }}>
                                 This prestigious award is presented to
                             </p>
                         </div>
 
                         {/* Student Name */}
-                        <div className="border-b-2 w-3/4 pb-2 border-gray-200">
+                        <div className="border-b-2 w-3/4 pb-2" style={{ borderColor: '#e5e7eb' }}>
                             <div className="font-extrabold capitalize text-[72px] leading-none" style={{ color: '#1e3a8a' }}>
                                 {data.studentName}
                             </div>
@@ -105,7 +106,7 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
 
                         {/* Course Info */}
                         <div className="max-w-[700px]">
-                            <p className="italic mb-3 text-base text-slate-600">
+                            <p className="italic mb-3 text-base" style={{ color: '#475569' }}>
                                 In recognition of successful mastery and fulfillment of all academic requirements for the program in
                             </p>
                             <div className="font-extrabold uppercase text-[28px] leading-tight" style={{ color: '#312e81' }}>
@@ -114,29 +115,29 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                         </div>
 
                         {/* Performance Scores Section */}
-                        <div className="flex flex-col items-center border-t border-gray-200 pt-5 w-[80%] gap-4">
+                        <div className="flex flex-col items-center pt-5 w-[80%] gap-4" style={{ borderTop: '1px solid #e5e7eb' }}>
                             <div className="flex justify-center gap-12 text-center w-full">
                                 <div>
-                                    <div className="uppercase text-gray-400 text-[8px] font-sans font-bold tracking-wider">Lectures Watch</div>
+                                    <div className="uppercase text-[8px] font-bold tracking-wider" style={{ color: '#9ca3af', fontFamily: 'sans-serif' }}>Lectures Watch</div>
                                     <div className="font-extrabold text-lg" style={{ color: '#1e3a8a' }}>{data.videoScore || 0}%</div>
                                 </div>
                                 <div>
-                                    <div className="uppercase text-gray-400 text-[8px] font-sans font-bold tracking-wider">Assignments</div>
+                                    <div className="uppercase text-[8px] font-bold tracking-wider" style={{ color: '#9ca3af', fontFamily: 'sans-serif' }}>Assignments</div>
                                     <div className="font-extrabold text-lg" style={{ color: '#1e3a8a' }}>{data.assignmentScore || 0}/30</div>
                                 </div>
                                 <div>
-                                    <div className="uppercase text-gray-400 text-[8px] font-sans font-bold tracking-wider">Quiz Score</div>
+                                    <div className="uppercase text-[8px] font-bold tracking-wider" style={{ color: '#9ca3af', fontFamily: 'sans-serif' }}>Quiz Score</div>
                                     <div className="font-extrabold text-lg" style={{ color: '#1e3a8a' }}>{data.quizScore || 0}%</div>
                                 </div>
-                                <div className="border-l-2 border-gray-200 pl-12">
-                                    <div className="uppercase text-gray-500 text-[10px] font-sans font-bold tracking-wider">Final Grade</div>
+                                <div className="pl-12" style={{ borderLeft: '2px solid #e5e7eb' }}>
+                                    <div className="uppercase text-[10px] font-bold tracking-wider" style={{ color: '#6b7280', fontFamily: 'sans-serif' }}>Final Grade</div>
                                     <div className="font-extrabold text-2xl" style={{ color: '#c5a059' }}>{data.finalScore || 0}%</div>
                                 </div>
                             </div>
                             {data.assignmentFeedback && (
                                 <div className="mt-4 px-10">
-                                    <div className="uppercase text-[#c5a059] text-[9px] font-sans font-black tracking-widest mb-1">Instructor Remarks</div>
-                                    <div className="text-[11px] italic text-slate-600 max-w-[600px] leading-relaxed">
+                                    <div className="uppercase text-[9px] font-black tracking-widest mb-1" style={{ color: '#c5a059', fontFamily: 'sans-serif' }}>Instructor Remarks</div>
+                                    <div className="text-[11px] italic max-w-[600px] leading-relaxed" style={{ color: '#475569' }}>
                                         "{data.assignmentFeedback}"
                                     </div>
                                 </div>
@@ -146,8 +147,8 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                         {/* Footer: Signatures and Seal */}
                         <div className="w-full flex justify-between items-center px-12 mt-4">
                             <div className="w-[200px]">
-                                <div className="italic border-b border-gray-300 pb-2 text-[20px]" style={{ color: '#1e3a8a' }}>EduSmart AI</div>
-                                <div className="uppercase text-gray-500 mt-2 text-[9px] font-sans font-bold tracking-wider">Registrar</div>
+                                <div className="italic pb-2 text-[20px]" style={{ color: '#1e3a8a', borderBottom: '1px solid #d1d5db' }}>EduSmart AI</div>
+                                <div className="uppercase mt-2 text-[9px] font-bold tracking-wider" style={{ color: '#6b7280', fontFamily: 'sans-serif' }}>Registrar</div>
                             </div>
 
                             {/* Seal */}
@@ -160,15 +161,15 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                             </div>
 
                             <div className="w-[200px]">
-                                <div className="font-bold border-b border-gray-300 pb-2 text-[20px] font-sans" style={{ color: '#1e3a8a' }}>
+                                <div className="font-bold pb-2 text-[20px]" style={{ color: '#1e3a8a', borderBottom: '1px solid #d1d5db', fontFamily: 'sans-serif' }}>
                                     {new Date(data.completionDate).toLocaleDateString()}
                                 </div>
-                                <div className="uppercase text-gray-500 mt-2 text-[9px] font-sans font-bold tracking-wider">Date of Issuance</div>
+                                <div className="uppercase mt-2 text-[9px] font-bold tracking-wider" style={{ color: '#6b7280', fontFamily: 'sans-serif' }}>Date of Issuance</div>
                             </div>
                         </div>
 
                         {/* Certificate ID */}
-                        <div className="text-gray-400 font-normal opacity-50 text-[9px] font-mono mt-2 text-left w-full pl-8">
+                        <div className="font-normal opacity-50 text-[9px] mt-2 text-left w-full pl-8" style={{ color: '#9ca3af', fontFamily: 'monospace' }}>
                             ID: {data.certificateId || "EDU-CERT-8821"}
                         </div>
                     </div>
