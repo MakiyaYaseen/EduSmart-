@@ -28,8 +28,8 @@ export const createStripeOrder = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `http://localhost:5173/payment-success?courseId=${courseId}&session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `http://localhost:5173/view-course/${courseId}`,
+            success_url: `${process.env.CLIENT_URL}/payment-success?courseId=${courseId}&session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.CLIENT_URL}/view-course/${courseId}`,
             metadata: {
                 courseId: courseId,
                 userId: userId
