@@ -126,7 +126,7 @@ const Login = () => {
               disabled={loading}
               onClick={handleLogin}
             >
-              {loading ? <ClipLoader size={20} color='white' /> : "Sign In"}
+              {loading ? <ClipLoader size={20} color='white' /> : "Login"}
             </button>
 
             <div className="relative flex py-2 items-center">
