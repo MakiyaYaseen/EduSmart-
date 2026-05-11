@@ -67,117 +67,108 @@ const CertificateModal = ({ isOpen, onClose, data }) => {
                             width: '1000px',
                             height: '707px',
                             border: '30px solid #0f172a',
-                            padding: '60px 40px',
+                            padding: '40px',
                             fontFamily: 'serif',
                             backgroundColor: '#ffffff',
                             position: 'relative',
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            justifyContent: 'space-between',
-                            textAlign: 'center',
                             flexShrink: 0,
-                            boxSizing: 'border-box'
+                            boxSizing: 'border-box',
+                            overflow: 'hidden'
                         }}
                     >
                         {/* Decorative Borders */}
                         <div style={{ position: 'absolute', inset: '5px', border: '5px solid #c5a059', pointerEvents: 'none', borderStyle: 'solid', boxSizing: 'border-box' }}></div>
                         <div style={{ position: 'absolute', inset: '12px', border: '1px solid #0f172a', pointerEvents: 'none', borderStyle: 'solid', boxSizing: 'border-box' }}></div>
 
-                        {/* Header */}
-                        <div style={{ marginBottom: '20px' }}>
-                            <div style={{ fontWeight: '800', textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '8px', fontSize: '10px', color: '#c5a059' }}>
-                                Official Digital Verification
+                        {/* Header Section */}
+                        <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                            <div style={{ fontWeight: '800', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '6px', fontSize: '12px', color: '#c5a059', fontFamily: 'sans-serif' }}>
+                                Official Digital Certification
                             </div>
-                            <div style={{ fontWeight: '800', marginBottom: '0', fontSize: '36px', color: '#0f172a', fontFamily: 'sans-serif' }}>
+                            <div style={{ fontWeight: '900', fontSize: '42px', color: '#0f172a', fontFamily: 'sans-serif' }}>
                                 EduSmart<span style={{ color: '#c5a059' }}>.</span> Learning
                             </div>
                         </div>
 
-                        {/* Main Title Area */}
-                        <div style={{ marginTop: '24px' }}>
-                            <div style={{ fontStyle: 'italic', fontWeight: '800', fontSize: '58px', lineHeight: '1', color: '#0f172a' }}>
+                        {/* Title Section */}
+                        <div style={{ marginTop: '40px', textAlign: 'center' }}>
+                            <div style={{ fontStyle: 'italic', fontWeight: '800', fontSize: '64px', lineHeight: '1', color: '#0f172a', marginBottom: '10px' }}>
                                 Certificate of Completion
                             </div>
-                            <p style={{ textTransform: 'uppercase', marginTop: '16px', marginBottom: '0', fontSize: '12px', letterSpacing: '4px', color: '#6b7280' }}>
+                            <p style={{ textTransform: 'uppercase', fontSize: '12px', letterSpacing: '4px', color: '#6b7280', margin: '0', fontWeight: '600' }}>
                                 This prestigious award is presented to
                             </p>
                         </div>
 
-                        {/* Student Name */}
-                        <div style={{ borderBottom: '2px solid #e5e7eb', width: '75%', paddingBottom: '8px', marginBottom: '20px' }}>
-                            <div style={{ fontWeight: '800', textTransform: 'capitalize', fontSize: '72px', lineHeight: '1', color: '#1e3a8a' }}>
+                        {/* Student Name Section */}
+                        <div style={{ marginTop: '30px', borderBottom: '2px solid #e5e7eb', width: '70%', paddingBottom: '10px', textAlign: 'center' }}>
+                            <div style={{ fontWeight: '800', textTransform: 'capitalize', fontSize: '68px', lineHeight: '1', color: '#1e3a8a' }}>
                                 {data.studentName}
                             </div>
                         </div>
 
-                        {/* Course Info */}
-                        <div style={{ maxWidth: '700px', marginBottom: '20px' }}>
-                            <p style={{ fontStyle: 'italic', marginBottom: '12px', fontSize: '16px', color: '#475569' }}>
+                        {/* Course Info Section */}
+                        <div style={{ marginTop: '25px', maxWidth: '750px', textAlign: 'center' }}>
+                            <p style={{ fontStyle: 'italic', marginBottom: '10px', fontSize: '16px', color: '#475569', lineHeight: '1.5' }}>
                                 In recognition of successful mastery and fulfillment of all academic requirements for the program in
                             </p>
-                            <div style={{ fontWeight: '800', textTransform: 'uppercase', fontSize: '28px', lineHeight: '1.2', color: '#312e81' }}>
+                            <div style={{ fontWeight: '900', textTransform: 'uppercase', fontSize: '32px', lineHeight: '1.2', color: '#312e81' }}>
                                 {data.courseTitle}
                             </div>
                         </div>
 
-                        {/* Performance Scores Section */}
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '20px', width: '80%', gap: '16px', borderTop: '1px solid #e5e7eb' }}>
-                            <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', textAlign: 'center', width: '100%' }}>
-                                <div>
-                                    <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '8px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Lectures Watch</div>
-                                    <div style={{ fontWeight: '800', fontSize: '18px', color: '#1e3a8a' }}>{data.videoScore || 0}%</div>
-                                </div>
-                                <div>
-                                    <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '8px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Assignments</div>
-                                    <div style={{ fontWeight: '800', fontSize: '18px', color: '#1e3a8a' }}>{data.assignmentScore || 0}/30</div>
-                                </div>
-                                <div>
-                                    <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '8px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Quiz Score</div>
-                                    <div style={{ fontWeight: '800', fontSize: '18px', color: '#1e3a8a' }}>{data.quizScore || 0}%</div>
-                                </div>
-                                <div style={{ borderLeft: '2px solid #e5e7eb', paddingLeft: '48px' }}>
-                                    <div style={{ textTransform: 'uppercase', color: '#6b7280', fontSize: '10px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Final Grade</div>
-                                    <div style={{ fontWeight: '800', fontSize: '24px', color: '#c5a059' }}>{data.finalScore || 0}%</div>
-                                </div>
+                        {/* Metrics Section */}
+                        <div style={{ marginTop: '40px', width: '85%', display: 'flex', justifyContent: 'center', gap: '60px', paddingTop: '25px', borderTop: '1px solid #e5e7eb' }}>
+                            <div style={{ textAlign: 'center' }}>
+                                <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '800', letterSpacing: '1px', marginBottom: '5px' }}>Lectures</div>
+                                <div style={{ fontWeight: '800', fontSize: '20px', color: '#1e3a8a' }}>{data.videoScore || 0}%</div>
                             </div>
-                            {data.assignmentFeedback && (
-                                <div style={{ marginTop: '16px', paddingLeft: '40px', paddingRight: '40px' }}>
-                                    <div style={{ textTransform: 'uppercase', color: '#c5a059', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '900', letterSpacing: '0.1em', marginBottom: '4px' }}>Instructor Remarks</div>
-                                    <div style={{ fontSize: '11px', fontStyle: 'italic', color: '#475569', maxWidth: '600px', lineHeight: '1.5' }}>
-                                        "{data.assignmentFeedback}"
-                                    </div>
-                                </div>
-                            )}
+                            <div style={{ textAlign: 'center' }}>
+                                <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '800', letterSpacing: '1px', marginBottom: '5px' }}>Assignments</div>
+                                <div style={{ fontWeight: '800', fontSize: '20px', color: '#1e3a8a' }}>{data.assignmentScore || 0}/30</div>
+                            </div>
+                            <div style={{ textAlign: 'center' }}>
+                                <div style={{ textTransform: 'uppercase', color: '#9ca3af', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '800', letterSpacing: '1px', marginBottom: '5px' }}>Quiz</div>
+                                <div style={{ fontWeight: '800', fontSize: '20px', color: '#1e3a8a' }}>{data.quizScore || 0}%</div>
+                            </div>
+                            <div style={{ borderLeft: '2px solid #e5e7eb', paddingLeft: '60px', textAlign: 'center' }}>
+                                <div style={{ textTransform: 'uppercase', color: '#6b7280', fontSize: '11px', fontFamily: 'sans-serif', fontWeight: '800', letterSpacing: '1px', marginBottom: '5px' }}>Grade</div>
+                                <div style={{ fontWeight: '900', fontSize: '28px', color: '#c5a059' }}>{data.finalScore || 0}%</div>
+                            </div>
                         </div>
 
-                        {/* Footer: Signatures and Seal */}
-                        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '48px', paddingRight: '48px', marginTop: '16px' }}>
-                            <div style={{ width: '200px' }}>
-                                <div style={{ fontStyle: 'italic', borderBottom: '1px solid #d1d5db', paddingBottom: '8px', fontSize: '20px', color: '#1e3a8a' }}>EduSmart AI</div>
-                                <div style={{ textTransform: 'uppercase', color: '#6b7280', marginTop: '8px', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Registrar</div>
+                        {/* Footer Section */}
+                        <div style={{ position: 'absolute', bottom: '60px', width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '0 80px', boxSizing: 'border-box' }}>
+                            <div style={{ width: '220px', textAlign: 'center' }}>
+                                <div style={{ fontStyle: 'italic', borderBottom: '1px solid #d1d5db', paddingBottom: '10px', fontSize: '22px', color: '#1e3a8a', fontFamily: 'serif' }}>EduSmart AI</div>
+                                <div style={{ textTransform: 'uppercase', color: '#6b7280', marginTop: '10px', fontSize: '10px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '1px' }}>Registrar</div>
                             </div>
 
                             {/* Seal */}
                             <div style={{
-                                width: '100px', height: '100px', backgroundColor: '#c5a059',
-                                border: '4px solid #ae8a41', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                                width: '110px', height: '110px', backgroundColor: '#c5a059',
+                                border: '5px solid #ae8a41', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 20px rgba(197, 160, 89, 0.3)',
+                                marginBottom: '-10px'
                             }}>
-                                <IoShieldCheckmarkOutline size={50} color="white" />
+                                <IoShieldCheckmarkOutline size={55} color="white" />
                             </div>
 
-                            <div style={{ width: '200px' }}>
-                                <div style={{ fontWeight: '700', borderBottom: '1px solid #d1d5db', paddingBottom: '8px', fontSize: '20px', fontFamily: 'sans-serif', color: '#1e3a8a' }}>
+                            <div style={{ width: '220px', textAlign: 'center' }}>
+                                <div style={{ fontWeight: '700', borderBottom: '1px solid #d1d5db', paddingBottom: '10px', fontSize: '20px', fontFamily: 'sans-serif', color: '#1e3a8a' }}>
                                     {new Date(data.completionDate).toLocaleDateString()}
                                 </div>
-                                <div style={{ textTransform: 'uppercase', color: '#6b7280', marginTop: '8px', fontSize: '9px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '0.05em' }}>Date of Issuance</div>
+                                <div style={{ textTransform: 'uppercase', color: '#6b7280', marginTop: '10px', fontSize: '10px', fontFamily: 'sans-serif', fontWeight: '700', letterSpacing: '1px' }}>Date of Issuance</div>
                             </div>
                         </div>
 
                         {/* Certificate ID */}
-                        <div style={{ color: '#9ca3af', fontWeight: '400', opacity: '0.5', fontSize: '9px', fontFamily: 'monospace', marginTop: '8px', textAlign: 'left', width: '100%', paddingLeft: '32px' }}>
-                            ID: {data.certificateId || "EDU-CERT-8821"}
+                        <div style={{ position: 'absolute', bottom: '25px', left: '40px', color: '#9ca3af', fontWeight: '400', opacity: '0.6', fontSize: '10px', fontFamily: 'monospace' }}>
+                            VERIFICATION ID: {data.certificateId || "EDU-CERT-8821"}
                         </div>
+                    </div>
                     </div>
                 </div>
 
